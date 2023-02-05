@@ -1,0 +1,17 @@
+server:
+  port: 8200
+spring.cloud.stream:
+  function:
+    definition: consumer;process
+  bindings:
+    consumer-in-0:
+      destination: order-requesta
+    process-in-0:
+      destination: order-response
+  kafka:
+    binder:
+      brokers:
+        - localhost:29092
+
+
+
